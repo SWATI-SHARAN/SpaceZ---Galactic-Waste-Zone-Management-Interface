@@ -1,0 +1,167 @@
+/* General Styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #ccd6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+/* Auth Container */
+.auth-container {
+    background: rgba(17, 34, 64, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+    width: 350px;
+    text-align: center;
+}
+
+/* Form Box (Same Style for Login, Signup, and Forgot Password) */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-box h2 {
+    margin-bottom: 15px;
+    color: #00bcd4;
+}
+
+/* Input Fields (Same for all forms) */
+.form-box input {
+    padding: 10px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    background: rgba(0, 188, 212, 0.2);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Buttons (Same for all forms) */
+.btn {
+    background: linear-gradient(135deg, #00bcd4, #008c9e);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Error Messages (Same for all forms) */
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+/* Loading Spinner (Same for all forms) */
+.spinner {
+    margin-left: 8px;
+    font-size: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide Elements */
+.hidden {
+    display: none;
+}
+
+/* Links */
+a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Input Fields */
+.form-box input {
+    padding: 10px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    background: rgba(0, 188, 212, 0.2);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover & Focus Glow Effect */
+.form-box input:hover,
+.form-box input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/*cursor*/
+#custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* Hover Glow Effect */
+.input-container input:hover, 
+.input-container input:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+    outline: none;
+}
+/* ✅ Remember Me Styling */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    font-size: 14px;
+    color: #ccd6f6;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: px;
+    height: 16px;
+    accent-color: #00bcd4; /* Changes checkbox color */
+}
+/* Moving Background */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80') repeat;
+    background-size: cover;
+    animation: moveBackground 30s linear infinite;
+}

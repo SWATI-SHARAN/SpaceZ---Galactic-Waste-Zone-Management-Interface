@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO Cargo Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ISRO Cargo Management System</h1>
+        <div class="buttons">
+            <a href="login.html">
+              <button class="btn">🛰️ Disconnect from Orbit</button>
+            </a><br><br><br><br>
+          </div>
+          
+         <!--Cursor-->
+         <div id="custom-cursor"></div>
+        
+        
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li class="active">
+                    <span class="material-symbols-outlined">dashboard</span> Dashboard
+                </li>
+                <li>
+                    <a href="search.html" style="text-decoration: none; color: inherit;">
+                        <span class="material-symbols-outlined">search</span> Search & Retrieve
+                    </a>
+                </li>
+                <li>
+                    <a href="waste.html" style="text-decoration: none; color: inherit;">
+                        <span class="material-symbols-outlined">delete_sweep</span> Waste Management
+                    </a>
+                </li>
+                <li>
+                    <a href="activity.html" style="text-decoration: none; color: inherit;">
+                        <span class="material-symbols-outlined">history</span> Activity Logs
+                    </a>
+                </li>
+            </ul>
+            
+        </aside>
+
+        <main>
+            <section class="dashboard">
+                <div class="card fade-in">
+                    <h3>Total Items</h3>
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <p id="total-items">50</p> 
+                </div>
+                <div class="card fade-in">
+                    <h3>Expired Items</h3>
+                    <span class="material-symbols-outlined">hourglass_empty</span>
+                    <p id="expiring-items">420</p> 
+                </div>
+                <a href="add_items.html" style="text-decoration: none; color: inherit;">
+                    <div class="card fade-in">
+                      <h3>Inventory Management</h3>
+                      <span class="material-symbols-outlined">add</span>
+                      <p>Add items to the cargo</p> 
+                    </div>
+                  </a>
+                  
+            </section>
+
+            <section class="card fade-in full-width"  onclick="window.location.href='ZoneUtil.html';" style="cursor: pointer;">
+                <h3>Zone Utilization <span class="material-symbols-outlined">insights</span></h3>
+                <p>Check the availability of space on cargo</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

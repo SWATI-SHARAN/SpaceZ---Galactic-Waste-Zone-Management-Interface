@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Color and Theme Variables */
+:root {
+    --primary-color: #00bcd4;
+    --background-color: #0a192f;
+    --text-color: #f2e6e6;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 255, 255, 0.3);
+    --button-bg: #112240;
+    --button-hover: #233554;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80') repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 30s linear infinite;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Background movement animation */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Header Section */
+header {
+    background: rgba(10, 25, 47, 0.9);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px var(--shadow);
+}
+
+/* Title Style */
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #193535, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+    color: #dce5e3;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Button Group Layout */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Button Style */
+.buttons .btn,
+.date-control .btn {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Main Action Buttons */
+.buttons .btn {
+    background: linear-gradient(135deg, #00bcd4, #008c9e);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttons .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Date Control Buttons */
+.date-control .btn {
+    background: var(--button-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    margin: 5px;
+}
+
+.date-control .btn:hover {
+    background: var(--button-hover);
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 200px;
+    background: rgba(17, 34, 64, 0.9);
+    box-shadow: 2px 0 10px var(--shadow);
+    padding: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Sidebar List Items */
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--text-color);
+}
+
+.sidebar li:hover,
+.sidebar .active {
+    background: var(--primary-color);
+    color: #0a192f;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Stacked Dashboard Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* Info Cards */
+.card {
+    background: linear-gradient(135deg, rgba(2, 195, 221, 0.2), rgba(0, 140, 158, 0.2));
+    padding: 1.5rem;
+    min-width: 200px;
+    max-width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Simple Fade-in Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Full-width Section Utility */
+.full-width {
+    grid-column: 1 / -1;
+    width: 400%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Material Icon Settings */
+.material-symbols-outlined {
+    vertical-align: middle;
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+
+/* Card Icon Display */
+.card .material-symbols-outlined {
+    display: block;
+    font-size: 2rem;
+    margin: 5px auto;
+}
+
+/* Graph Container Section */
+.graph-section {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0, 188, 212, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+}
+
+/* Fast Forward Input Style */
+#fast-forward-days {
+    background: rgba(17, 34, 64, 0.9);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    border-radius: 5px;
+    width: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    transition: 0.3s ease-in-out;
+    appearance: textfield;
+    -moz-appearance: textfield; /* For Firefox */
+}
+
+/* Style Number Buttons (Chrome/Edge) */
+#fast-forward-days::-webkit-inner-spin-button,
+#fast-forward-days::-webkit-outer-spin-button {
+    appearance: none;
+    background: var(--primary-color);
+    width: 16px;
+    height: 16px;
+    border-radius: 90%;
+    margin: 2px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#fast-forward-days::-webkit-inner-spin-button:hover,
+#fast-forward-days::-webkit-outer-spin-button:hover {
+    background: #00ffff;
+}
+
+/* Custom Cursor Effect */
+#custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}

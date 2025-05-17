@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth - ISRO Cargo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+    <script defer src="auth.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div class="form-box" id="login-box">
+            <p id="login-error" class="error-message"></p>
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+             <!-- ✅ Remember Me Checkbox -->
+    <div class="remember-me">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember Me</label>
+    </div>
+
+            <button id="login-btn" class="btn" onclick="validateLogin()">
+                <span id="login-text">Login</span>
+                <span id="login-spinner" class="spinner hidden">🔄</span>
+            </button>
+    
+            <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+        
+        <!--Cursor-->
+        <div id="custom-cursor"></div>
+
+        <!-- Signup Form (Now Matches Login Style) -->
+        <div class="form-box hidden" id="signup-box">
+            <p id="signup-error" class="error-message"></p>
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+
+            <button id="signup-btn" class="btn" onclick="validateSignup()">
+                <span id="signup-text">Sign Up</span>
+                <span id="signup-spinner" class="spinner hidden">🔄</span>
+            </button>
+
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+        
+        <!-- Forgot Password Form (Now Matches Login Style) -->
+        <div class="form-box hidden" id="forgot-password-box">
+            <p id="forgot-error" class="error-message"></p>
+            <h2>Forgot Password</h2>
+            <input type="email" id="forgot-email" placeholder="Enter your email" required>
+
+            <button id="forgot-btn" class="btn" onclick="validateForgotPassword()">
+                <span id="forgot-text">Reset Password</span>
+                <span id="forgot-spinner" class="spinner hidden">🔄</span>
+            </button>
+
+            <p>Back to <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

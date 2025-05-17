@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Manager</title>
+    <link rel="stylesheet" href="waste.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <header>
+            <div id="custom-cursor"></div>
+            <div class="min-h-screen bg-[#0a192f] text-[#e0f2f7] font-sans relative overflow-hidden">
+                <div class="background"></div>
+            <header style="background-color: #1e3a5f; color: white; padding: 1.5rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.4);">
+                <div id="custom-cursor"></div>
+                <h1 style="font-family: 'Orbitron', sans-serif; text-align: center; font-size: 2rem;">Waste Management</h1>
+                <div style="position: absolute; top: 10px; right: 10px;">
+                    <a href="index.html"
+          class="absolute right-6 top-4 px-6 py-2 text-lg font-semibold text-white rounded-lg shadow-md transition-all overflow-hidden group border border-cyan-400">
+          <span
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-transform transform scale-x-0 group-hover:scale-x-100 origin-left"></span>
+          <span class="relative z-10 flex items-center">
+            ☄️ Re-enter Dashboard Orbit 
+            <span class="ml-2 animate-ping">🚀</span>
+          </span>
+        </a>
+                  </div>
+            </header>
+            
+    <div class="main">
+            <div class="stats">
+                <div class="stat-box">
+                    <i class="fas fa-calendar-times"></i>
+                    <div class="info">
+                        <h3>Expired Items</h3>
+                        <span id="bad-count">0</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="info">
+                        <h3>About to Expire</h3>
+                        <span id="soon-count">0</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-box-open"></i>
+                    <div class="info">
+                        <h3>Days of Supplies Left</h3>
+                        <span id="days">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="tables">
+            <div class="table-box">
+                <div class="table-top">
+                    <h2>Expired Items</h2>
+                    <button id="add-bad" class="add">
+                        <i class="fas fa-plus"></i> Add Item
+                    </button>
+                </div>
+                <div class="table-wrap">
+                    <table id="bad-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Expiry Date</th>
+                                <th>Quantity</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bad-items">
+                            <!--We will write the ITEMS here -->
+                        </tbody>
+                    </table>
+                    <div id="bad-empty" class="empty">No expired items.</div>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <div class="table-top">
+                    <h2>Items About to Expire</h2>
+                    <button id="add-soon" class="add">
+                        <i class="fas fa-plus"></i> Add Item
+                    </button>
+                </div>
+                <div class="table-wrap">
+                    <table id="soon-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Expiry Date</th>
+                                <th>Days Left</th>
+                                <th>Quantity</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="soon-items">
+                            <!-- Items go here -->
+                        </tbody>
+                    </table>
+                    <div id="soon-empty" class="empty">No items about to expire.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    <!-- Pop-up Form -->
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <div class="popup-top">
+                <h2 id="popup-title">Add New Item</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="popup-body">
+                <form id="item-form">
+                    <input type="hidden" id="table-type">
+                    <div class="form-row">
+                        <label for="name">Item Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="date">Expiry Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="qty">Quantity</label>
+                        <input type="number" id="qty" min="1" value="1" required>
+                      </div>
+                      
+                    <div class="form-row">
+                        <label for="place">Location</label>
+                        <input type="text" id="place" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="use">Daily Usage</label>
+                        <input type="number" id="use" min="0" step="0.1" value="0">
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="save">Add Item</button>
+                        <button type="button" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="waste.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cargo Activity Log</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: url('https://png.pngtree.com/background/20210712/original/pngtree-dark-blue-cosmic-space-nebula-background-picture-image_1178891.jpg') repeat;
+      background-size: 150%;
+      animation: moveBackground 20s linear infinite;
+      color: #e0f2f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    #custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s linear;
+    }
+
+    header {
+      background-color: #1e3a5f;
+      color: white;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      text-shadow: 0 0 5px #1e3a5f, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    }
+
+    .reenter-button {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+    }
+
+    .reenter-button a {
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      border: 1px solid #00ffff;
+      border-radius: 10px;
+      background: linear-gradient(to right, #00aaff, #00ffff);
+      box-shadow: 0 0 10px #00ffff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .reenter-button a:hover {
+      background: linear-gradient(to right, #007acc, #00cccc);
+      transform: scale(1.05);
+    }
+
+    .table-section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(15, 23, 42, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 30px 30px rgba(54, 220, 246, 0.3);
+    }
+
+    .table-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #67e8f9;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: rgba(8, 145, 178, 0.2);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+      color: #00ffff;
+      font-weight: 600;
+    }
+
+    td {
+      color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: rgba(0, 255, 255, 0.1);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Optional status color styles (if you want to show status in future) */
+    .status-success {
+      color: #00ff9d;
+      font-weight: 500;
+    }
+
+    .status-fail {
+      color: #ff4c4c;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="custom-cursor"></div>
+
+  <header>
+    <h1>Cargo Activity Log</h1>
+    <div class="reenter-button">
+      <a href="index.html">
+        ☄️ Re-enter Dashboard Orbit <span class="ml-2 animate-ping">🚀</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="table-section">
+    <h2>Activity Log</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Activity Name</th>
+        </tr>
+      </thead>
+      <tbody id="activityLogBody">
+        <tr>
+          <td>2024-01-01</td>
+          <td>12:00 PM</td>
+          <td>Login</td>
+        </tr>
+        <tr>
+          <td>2024-01-01</td>
+          <td>01:00 PM</td>
+          <td>Signup</td>
+        </tr>
+        <tr>
+          <td>2024-01-02</td>
+          <td>02:00 PM</td>
+          <td>Placement of items</td>
+        </tr>
+        <tr>
+          <td>2024-01-02</td>
+          <td>03:00 PM</td>
+          <td>Retrieval of items</td>
+        </tr>
+        <tr>
+          <td>2024-01-03</td>
+          <td>04:00 PM</td>
+          <td>Disposal of items</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    const customCursor = document.getElementById("custom-cursor");
+    document.addEventListener("mousemove", (e) => {
+      customCursor.style.left = e.clientX + "px";
+      customCursor.style.top = e.clientY + "px";
+    });
+  </script>
+</body>
+</html>

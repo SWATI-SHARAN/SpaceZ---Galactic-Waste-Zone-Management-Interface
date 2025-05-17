@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Box</title>
+    <link rel="stylesheet" href="search.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    <div class="min-h-screen bg-[#0a192f] text-[#e0f2f7] font-sans relative overflow-hidden">
+    <div class="background"></div>
+
+    <div class="relative z-10 flex flex-col h-full">
+      <!-- Header -->
+      <div class="zone-strip">
+        <h1>Search & Retrieve</h1>
+        <a href="index.html" class="dashboard-button">
+          <span class="button-bg"></span>
+          <span class="button-content">
+            Re-enter Dashboard Orbit
+            <span class="ping-icon">🔵</span>
+          </span>
+        </a>
+      </div>
+      
+    
+</div>
+
+    <div class="box">
+        <div class="search-box">
+            <h1>Search</h1>
+            
+            <div class="top-bar">
+                <div class="param-box">
+                    <label for="param">Search by:</label>
+                    <select id="param">
+                        <option value="param1">Parameter 1</option>
+                        <option value="param2">Parameter 2</option>
+                        <option value="param3">Parameter 3</option>
+                    </select>
+                </div>
+                
+                <div class="input-box">
+                    <input type="text" id="query" placeholder="Type what you want to find...">
+                    <button id="search"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <button id="filter-btn" class="filter-btn">
+                    <i class="fas fa-filter"></i> Filters
+                </button>
+            </div>
+            
+            <div class="filter-box" id="filter-area">
+                <div class="filter-item">
+                    <label for="priority">Priority:</label>
+                    <select id="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                
+                <div class="filter-item">
+                    <label for="date">Expiry Date:</label>
+                    <input type="date" id="date">
+                </div>
+                
+                <div class="filter-item">
+                    <label for="place">Location:</label>
+                    <input type="text" id="place" placeholder="Enter location">
+                </div>
+                
+                <button id="apply">Apply Filters</button>
+                <button id="clear">Clear Filters</button>
+            </div>
+        </div>
+        
+        <div class="results-box" id="results">
+            <h2>Results</h2>
+            <div class="list" id="list">
+                <div class="empty">Type something to see results</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="search.js"></script>
+</body>
+</html>
