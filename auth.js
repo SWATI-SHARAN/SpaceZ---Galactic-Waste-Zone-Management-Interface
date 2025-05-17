@@ -20,9 +20,7 @@ function validateLogin() {
     spinner.classList.remove("hidden");
 
     setTimeout(() => {
-        // Simulated valid credentials (Replace with actual authentication)
-        if (username === "admin" && password === "1234567") {
-            window.location.href = "index.html"; // Redirect to the main page
+            window.location.href = "dashboard.html"; 
         } else {
             errorElement.innerText = "❌ Invalid username or password.";
         }
